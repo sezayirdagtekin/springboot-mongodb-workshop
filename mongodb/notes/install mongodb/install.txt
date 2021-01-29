@@ -1,0 +1,58 @@
+
+1. Download MongoDB
+ https://www.mongodb.com/
+
+I prefered zip file
+
+
+2-Configuration File
+Create a MongoDB config file, it’s just a text file, for example : D:\Tools\mongodb\config\mongo.config
+
+3- Add environment variable(path)
+D:\Tools\mongodb\bin
+
+4- Run MongoDB server
+PS D:\> mongod --config D:\Tools\mongodb\config\mongo.config
+
+
+5. Connect to MongoDB
+Uses mongo.exe to connect to the started MongoDB server.
+
+:>mongo
+
+
+
+----------------------------------------------
+
+
+6 . MongoDB as Windows Service
+
+Add MongoDB as Windows Service, so that MongoDB will start automatically following each system restart.
+
+Install as Windows Service with --install.
+
+
+PS D:\> mongod --config D:\Tools\mongodb\config\mongo.config --install
+PS D:\>
+
+
+A Windows service named “MongoDB” is created.
+
+PS D:\> net start MongoDB
+MongoDB hizmeti başlatılıyor....
+MongoDB hizmeti başarıyla başlatıldı.
+
+
+PS D:\> net stop MongoDB
+MongoDB hizmeti durduruluyor.
+MongoDB hizmeti başarıyla durduruldu.
+
+PS D:\>
+
+
+
+7-Common mistake
+ Install MongoDB as Windows service on Windows 8, but hit “Access is denied.” error message :
+
+solution:
+ Run the Command Prompt with Administrative Privileges – right click on the command prompt icon, select run as administrator.
