@@ -9,7 +9,7 @@ import com.sezayir.mongodb.model.Application;
 import com.sezayir.mongodb.repository.ApplicationRepository;
 
 @Component
-public class Applicationdao {
+public class ApplicationDao {
 	
 	@Autowired
 	private ApplicationRepository repository;
