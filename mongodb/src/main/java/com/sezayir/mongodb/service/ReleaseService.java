@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.sezayir.mongodb.dao.ReleaseDao;
 import com.sezayir.mongodb.model.Release;
-import com.sezayir.mongodb.repository.ReleaseRepository;
 
 @Service
 public class ReleaseService {
@@ -15,8 +14,12 @@ public class ReleaseService {
 	@Autowired
 	private ReleaseDao dao;
 
-	public List<Release> getAllApplications() {
-		return dao.getAllApplications();
+	public void insert(Release release) {
+		dao.insert(release);
+	}
+
+	public List<Release> getAllReleases() {
+		return dao.getAllReleases();
 	}
 
 }

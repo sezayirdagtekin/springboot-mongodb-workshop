@@ -14,8 +14,13 @@ public class ReleaseDao {
 	@Autowired
 	private ReleaseRepository repository;
 
-	public List<Release> getAllApplications() {
+	public List<Release> getAllReleases() {
 		return repository.findAll();
+	}
+
+	public void insert(Release release) {
+		repository.insert(release);
+		
 	}
 
 }
