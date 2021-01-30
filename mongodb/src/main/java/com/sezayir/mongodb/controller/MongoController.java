@@ -45,6 +45,11 @@ public class MongoController {
 		return applicationService.findApplicationByName(name);
 	}
 
+	@RequestMapping(value = "/applications/template", method = RequestMethod.POST)
+	public void addNewApplication(@RequestBody Application application) {
+		applicationService.addNewApplicationUsingMongoTemplate(application);
+	}
+
 	@RequestMapping(value = "/releases/tickets", method = RequestMethod.PUT)
 	public void addReleaseWithTicket(@RequestBody Release release) {
 		releaseService.insert(release);
@@ -59,12 +64,12 @@ public class MongoController {
 	public List<Ticket> getAllTickets() {
 		return ticketService.getAllTickets();
 	}
-	
+
 	@RequestMapping(value = "/tickets/status/{status}")
 	public List<Ticket> findTicketByStatus(@PathVariable("status") String status) {
 		return ticketService.findTicketByStatus(status);
 	}
-	
+
 	@RequestMapping(value = "/tickets/count/{status}")
 	public Long countAllTicketsByStatus(@PathVariable("status") String status) {
 		return ticketService.countAllTicketsByStatus(status);

@@ -26,5 +26,9 @@ public class ApplicationService {
 	public Optional<Application> findApplicationByName(String name) {
 		return dao.findApplicationByName(name);
 	}
+	
+	public void addNewApplicationUsingMongoTemplate(Application application) {
+		dao.addNewApplicationUsingMongoTemplate(application);
+	}
 
 }
