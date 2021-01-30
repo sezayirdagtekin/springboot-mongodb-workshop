@@ -1,6 +1,7 @@
 package com.sezayir.mongodb.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,11 +13,14 @@ import com.sezayir.mongodb.model.Ticket;
 public class TicketService {
 
 	@Autowired
-	private TicketDao ticketDao;
+	private TicketDao dao;
 
 	public List<Ticket> getAllTickets() {
-		return ticketDao.getAllTickets();
-
+		return dao.getAllTickets();
 	}
-
+	
+	public List<Ticket>  findTicketByStatus(String status) {
+		return dao.findTicketByStatus(status);
+	}
+	
 }

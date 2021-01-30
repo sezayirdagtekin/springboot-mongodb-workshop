@@ -11,7 +11,7 @@ import com.sezayir.mongodb.repository.ApplicationRepository;
 
 @Component
 public class ApplicationDao {
-	
+
 	@Autowired
 	private ApplicationRepository repository;
 
@@ -23,5 +23,8 @@ public class ApplicationDao {
 		return repository.findById(id);
 	}
 
+	public Optional<Application> findApplicationByName(String name) {
+		return repository.findByName(name);
+	}
 
 }

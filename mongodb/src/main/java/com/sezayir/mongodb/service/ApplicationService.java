@@ -23,4 +23,8 @@ public class ApplicationService {
 		return dao.getApplicationById(id);
 	}
 
+	public Optional<Application> findApplicationByName(String name) {
+		return dao.findApplicationByName(name);
+	}
+
 }
