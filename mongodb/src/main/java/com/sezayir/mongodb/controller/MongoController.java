@@ -49,6 +49,13 @@ public class MongoController {
 	public void addNewApplication(@RequestBody Application application) {
 		applicationService.addNewApplicationUsingMongoTemplate(application);
 	}
+	
+
+	@RequestMapping(value = "/applications/template", method = RequestMethod.DELETE)
+	public void deleteApplication(@RequestBody Application application) {
+		applicationService.deleteApplicationById(application);
+	}
+
 
 	@RequestMapping(value = "/releases/tickets", method = RequestMethod.PUT)
 	public void addReleaseWithTicket(@RequestBody Release release) {

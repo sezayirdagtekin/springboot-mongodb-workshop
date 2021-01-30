@@ -26,9 +26,13 @@ public class ApplicationService {
 	public Optional<Application> findApplicationByName(String name) {
 		return dao.findApplicationByName(name);
 	}
-	
+
 	public void addNewApplicationUsingMongoTemplate(Application application) {
 		dao.addNewApplicationUsingMongoTemplate(application);
+	}
+
+	public void deleteApplicationById(Application application) {
+		dao.deleteApplicationById(application);
 	}
 
 }

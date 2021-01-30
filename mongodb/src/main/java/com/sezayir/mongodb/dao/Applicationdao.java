@@ -15,9 +15,9 @@ public class ApplicationDao {
 
 	@Autowired
 	private ApplicationRepository repository;
-	
+
 	@Autowired
-	private MongoTemplate  mongoTemplate;
+	private MongoTemplate mongoTemplate;
 
 	public List<Application> getAllApplications() {
 		return repository.findAll();
@@ -30,10 +30,13 @@ public class ApplicationDao {
 	public Optional<Application> findApplicationByName(String name) {
 		return repository.findByName(name);
 	}
-	
-	
+
 	public void addNewApplicationUsingMongoTemplate(Application application) {
-		mongoTemplate.insert(application);	
+		mongoTemplate.insert(application);
+	}
+
+	public void deleteApplicationById(Application application) {
+		mongoTemplate.remove(application);
 	}
 
 }
