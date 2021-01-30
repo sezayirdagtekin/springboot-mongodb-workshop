@@ -1,6 +1,7 @@
 package com.sezayir.mongodb.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,10 @@ public class ApplicationService {
 
 	public List<Application> getAllApplications() {
 		return dao.getAllApplications();
+	}
+
+	public Optional<Application> getApplicationById(String id) {
+		return dao.getApplicationById(id);
 	}
 
 }

@@ -14,8 +14,9 @@ public class TicketService {
 	@Autowired
 	private TicketDao ticketDao;
 
-	public List<Ticket> getAllApplications() {
+	public List<Ticket> getAllTickets() {
 		return ticketDao.getAllTickets();
+
 	}
 
 }

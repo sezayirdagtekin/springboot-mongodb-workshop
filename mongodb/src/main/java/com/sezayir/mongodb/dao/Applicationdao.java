@@ -1,6 +1,7 @@
 package com.sezayir.mongodb.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,10 @@ public class ApplicationDao {
 
 	public List<Application> getAllApplications() {
 		return repository.findAll();
+	}
+
+	public Optional<Application> getApplicationById(String id) {
+		return repository.findById(id);
 	}
 
 
