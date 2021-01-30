@@ -1,7 +1,7 @@
 package com.sezayir.mongodb.service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +18,16 @@ public class TicketService {
 	public List<Ticket> getAllTickets() {
 		return dao.getAllTickets();
 	}
-	
-	public List<Ticket>  findTicketByStatus(String status) {
+
+	public List<Ticket> findTicketByStatus(String status) {
 		return dao.findTicketByStatus(status);
 	}
-	
+
+	public Long countAllTicketsByStatus(String status) {
+		Stream<Ticket> stream = dao.countAllTicketsByStatus(status);
+		Long count = stream.count();
+		stream.close();
+		return count;
+	}
+
 }

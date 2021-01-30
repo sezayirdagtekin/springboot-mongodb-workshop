@@ -59,9 +59,15 @@ public class MongoController {
 	public List<Ticket> getAllTickets() {
 		return ticketService.getAllTickets();
 	}
+	
 	@RequestMapping(value = "/tickets/status/{status}")
 	public List<Ticket> findTicketByStatus(@PathVariable("status") String status) {
 		return ticketService.findTicketByStatus(status);
+	}
+	
+	@RequestMapping(value = "/tickets/count/{status}")
+	public Long countAllTicketsByStatus(@PathVariable("status") String status) {
+		return ticketService.countAllTicketsByStatus(status);
 	}
 
 }
