@@ -55,6 +55,11 @@ public class MongoController {
 	public void deleteApplication(@RequestBody Application application) {
 		applicationService.deleteApplicationById(application);
 	}
+	
+	@RequestMapping(value = "/applications/{id}", method = RequestMethod.DELETE)
+	public void deleteApplication(@PathVariable  String id) {
+		applicationService.deleteApplicationById(id);
+	}
 
 
 	@RequestMapping(value = "/releases/tickets", method = RequestMethod.PUT)

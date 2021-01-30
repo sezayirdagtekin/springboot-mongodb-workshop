@@ -35,4 +35,8 @@ public class ApplicationService {
 		dao.deleteApplicationById(application);
 	}
 
+	public void deleteApplicationById(String id) {
+		dao.deleteApplicationById(id);
+	}
+
 }

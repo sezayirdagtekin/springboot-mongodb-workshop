@@ -39,4 +39,9 @@ public class ApplicationDao {
 		mongoTemplate.remove(application);
 	}
 
+	public void deleteApplicationById(String id) {
+		repository.deleteById(id);
+
+	}
+
 }
