@@ -96,6 +96,11 @@ public class MongoController {
 	public List<Ticket> findTicketByStatus(@PathVariable("status") String status) {
 		return ticketService.findTicketByStatus(status);
 	}
+	
+	@RequestMapping(value = "/tickets/appId/{id}" ,method = RequestMethod.GET)
+	public List<Ticket> findTicketByAppId(@PathVariable("id") String appId) {
+		return ticketService.findTicketByAppId(appId);
+	}
 
 	@RequestMapping(value = "/tickets/count/{status}",method = RequestMethod.GET)
 	public Long countAllTicketsByStatus(@PathVariable("status") String status) {

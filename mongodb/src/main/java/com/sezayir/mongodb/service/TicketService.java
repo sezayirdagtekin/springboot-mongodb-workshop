@@ -30,4 +30,8 @@ public class TicketService {
 		return count;
 	}
 
+	public List<Ticket> findTicketByAppId(String appId) {
+		 return dao.findTicketByAppId(appId);
+	}
+
 }

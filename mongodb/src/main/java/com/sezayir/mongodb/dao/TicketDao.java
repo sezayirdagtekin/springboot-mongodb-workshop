@@ -27,4 +27,8 @@ public class TicketDao {
 		return repository.countAllTicketsByStatus(status);
 	}
 
+	public List<Ticket> findTicketByAppId(String appId) {
+		return repository.findByAppId(appId);
+	}
+
 }
