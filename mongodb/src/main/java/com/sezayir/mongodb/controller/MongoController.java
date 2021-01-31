@@ -86,6 +86,11 @@ public class MongoController {
 		release.setId(id);
 		releaseService.updateRelease(release);
 	}
+	
+	@RequestMapping(value = "/releases/costs/{id}",method = RequestMethod.GET)
+	public Double getReleaseCost(@PathVariable("id") String id) {
+		return releaseService.getReleaseCost(id);
+	}
 
 	@RequestMapping(value = "/tickets", method = RequestMethod.GET)
 	public List<Ticket> getAllTickets() {

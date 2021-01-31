@@ -30,4 +30,8 @@ public class ReleaseService {
 		dao.updateRelease(release);
 	}
 
+	public Double getReleaseCost(String id) {
+		return dao.getReleaseCost(id);
+	}
+
 }

@@ -1,6 +1,7 @@
 package com.sezayir.mongodb.dao;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -39,6 +40,12 @@ public class ReleaseDao {
 
 	public void updateRelease(Release release) {
 		repository.save(release);
+	}
+
+	public Double getReleaseCost(String id) {
+		Optional<Release> release = repository.findById(id);
+		return release.isPresent() ? release.get().getEstimatedCosts() : 0;
+
 	}
 
 }
