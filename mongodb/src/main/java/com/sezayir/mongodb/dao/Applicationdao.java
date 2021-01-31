@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Component;
 
 import com.sezayir.mongodb.model.Application;
@@ -42,6 +45,18 @@ public class ApplicationDao {
 	public void deleteApplicationById(String id) {
 		repository.deleteById(id);
 
+	}
+	
+	//send just this body in  postman: {"name":"Trainer Sezayir"} 
+	public void updateApplicationUsingMongoTemplate(Application application) {
+      Query query = new Query();
+      query.addCriteria(Criteria.where("name").is(application.getName()));
+      Update update= new Update();
+      update.set("name","Trainer Sezayir");
+      update.set("description", "Mongo course in action!!");
+      mongoTemplate.updateFirst(query, update,Application.class);//update first record  founded
+    
+		
 	}
 
 }

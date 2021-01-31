@@ -39,4 +39,8 @@ public class ApplicationService {
 		dao.deleteApplicationById(id);
 	}
 
+	public void updateApplicationUsingMongoTemplate(Application application) {
+		dao.updateApplicationUsingMongoTemplate(application);
+	}
+
 }

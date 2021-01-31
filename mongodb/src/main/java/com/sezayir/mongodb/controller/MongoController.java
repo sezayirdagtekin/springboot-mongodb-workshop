@@ -50,6 +50,10 @@ public class MongoController {
 		applicationService.addNewApplicationUsingMongoTemplate(application);
 	}
 	
+	@RequestMapping(value = "/applications/template", method = RequestMethod.PUT)
+	public void updateApplication(@RequestBody Application application) {
+		applicationService.updateApplicationUsingMongoTemplate(application);
+	}
 
 	@RequestMapping(value = "/applications/template", method = RequestMethod.DELETE)
 	public void deleteApplication(@RequestBody Application application) {

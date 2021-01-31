@@ -12,5 +12,4 @@ public interface ApplicationRepository extends  MongoRepository<Application, Str
 
 	Optional<Application> findByName(String name);
 
-
 }
