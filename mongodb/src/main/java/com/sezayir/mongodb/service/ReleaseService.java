@@ -22,4 +22,8 @@ public class ReleaseService {
 		return dao.getAllReleases();
 	}
 
+	public List<Release> getAllReleasesByTicketStatus(String status) {
+		return dao.getAllReleasesByTicketStatus(status);
+	}
+
 }

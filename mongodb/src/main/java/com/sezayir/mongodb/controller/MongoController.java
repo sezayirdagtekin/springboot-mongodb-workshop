@@ -75,18 +75,24 @@ public class MongoController {
 	public List<Release> getAllReleases() {
 		return releaseService.getAllReleases();
 	}
+	
+	@RequestMapping(value = "/releases/status/{status}", method = RequestMethod.GET)
+	public List<Release> getAllReleasesByTicketStatus(@PathVariable("status") String status) {
+		return releaseService.getAllReleasesByTicketStatus(status);
+	}
+
 
 	@RequestMapping(value = "/tickets", method = RequestMethod.GET)
 	public List<Ticket> getAllTickets() {
 		return ticketService.getAllTickets();
 	}
 
-	@RequestMapping(value = "/tickets/status/{status}")
+	@RequestMapping(value = "/tickets/status/{status}" ,method = RequestMethod.GET)
 	public List<Ticket> findTicketByStatus(@PathVariable("status") String status) {
 		return ticketService.findTicketByStatus(status);
 	}
 
-	@RequestMapping(value = "/tickets/count/{status}")
+	@RequestMapping(value = "/tickets/count/{status}",method = RequestMethod.GET)
 	public Long countAllTicketsByStatus(@PathVariable("status") String status) {
 		return ticketService.countAllTicketsByStatus(status);
 	}
