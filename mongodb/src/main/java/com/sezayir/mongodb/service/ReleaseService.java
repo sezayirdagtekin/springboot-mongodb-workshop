@@ -26,4 +26,8 @@ public class ReleaseService {
 		return dao.getAllReleasesByTicketStatus(status);
 	}
 
+	public void updateRelease(Release release) {
+		dao.updateRelease(release);
+	}
+
 }

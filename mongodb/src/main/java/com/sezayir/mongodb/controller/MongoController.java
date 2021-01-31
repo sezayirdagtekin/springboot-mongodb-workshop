@@ -80,7 +80,12 @@ public class MongoController {
 	public List<Release> getAllReleasesByTicketStatus(@PathVariable("status") String status) {
 		return releaseService.getAllReleasesByTicketStatus(status);
 	}
-
+   
+	@RequestMapping(value = "/releases/{id}",method = RequestMethod.PUT)
+	public void updateRelease(@RequestBody Release release, @PathVariable("id") String id) {
+		release.setId(id);
+		releaseService.updateRelease(release);
+	}
 
 	@RequestMapping(value = "/tickets", method = RequestMethod.GET)
 	public List<Ticket> getAllTickets() {

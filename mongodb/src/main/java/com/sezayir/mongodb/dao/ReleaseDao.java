@@ -31,10 +31,14 @@ public class ReleaseDao {
 
 	public List<Release> getAllReleasesByTicketStatus(String status) {
 
-		Query query= new Query();
+		Query query = new Query();
 		query.addCriteria(Criteria.where("tickets.status").is(status));
-		
+
 		return mongoTemplate.find(query, Release.class);
+	}
+
+	public void updateRelease(Release release) {
+		repository.save(release);
 	}
 
 }
